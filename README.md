@@ -24,7 +24,7 @@ user@macbook:~$ python main.py TGTATTAGCCGG GGTCTGTACTA --match 3 --mismatch
 
 ![Smith-Waterman Scoring Gif](https://github.com/zehrakorkusuz/local_sequence_alignment/blob/main/assets/waterman.gif)
 
-###Steps of Smith-Waterman Algorithm {#background}
+### Steps of Smith-Waterman Algorithm {#background}
 
 1. Initilize an empty scoring matrix H with m+1 and n+1 size where m, n are the lengths of the sequences
 2. Compute the scores in the matrix with a scoring scheme where default values are
