@@ -1,0 +1,496 @@
+<!DOCTYPE html><html><head>
+      <title>README</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/zehrakorkusuz/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.6.8/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p,html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  300px/2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="algorithms-for-bioinformatics--blanzieri">ALGORITHMS FOR BIOINFORMATICS | Blanzieri</h1>
+
+<h6 class="mume-header" id="zehra-korkusuz--20222023">Zehra Korkusuz | 2022/2023</h6>
+
+<h3 class="mume-header" id="python-39-implementation-of-smith-waterman-algorithm"><code>Python 3.9</code> Implementation of Smith-Waterman Algorithm</h3>
+
+<p>Smith-Waterman algorithm is a local alignment algorithm which aims at finding the most similar subsequences between different sequences unlike Needleman-Wush which focuses on finding the optimal global alignment which covers the entire sequence.</p>
+<p><a href="#background">Background</a><br>
+<a href="#dependencies">Dependencies</a><br>
+<a href="#runalgo">How to run the algorithm?</a></p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>user@macbook:~$ python main.py TGTTACGG GGTTGACTA --match 3 --mismatch 
+-3 --penalty -2
+
+user@macbook:~$ python main.py TGTATTAGCCGG GGTCTGTACTA --match 3 --mismatch 
+-3 --penalty -2
+</code></pre><p><a href="#functions">Functions used in the algorithm</a></p>
+<p><img src="assets/waterman.gif" alt="Smith-Waterman Scoring Gif"></p>
+<h3 class="mume-header undefined" id="background">Steps of Smith-Waterman Algorithm</h3>
+
+<ol>
+<li>
+<p>Initilize an empty scoring matrix H with m+1 and n+1 size where m, n are the lengths of the sequences</p>
+</li>
+<li>
+<p>Compute the scores in the matrix with a scoring scheme where default values are</p>
+<p><code>matching_value = 3</code><br>
+<code>mismatch_value = -3</code><br>
+<code>penalty value = -2</code></p>
+</li>
+<li>
+<p>Backtrace recursively from the highest value to smallest value through the path which is greater than 0 to find the optimal local alignment</p>
+</li>
+</ol>
+<h3 class="mume-header undefined" id="runalgo">APPLICATION</h3>
+
+<p>Go to <strong>smith_waterman</strong> directory</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">user@macbook:~$ <span class="token builtin class-name">cd</span> smith_waterman
+</pre><p>which looks like</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">&#x251C;&#x2500;&#x2500; smith_waterman/
+&#x2502;   &#x251C;&#x2500;&#x2500; config.py
+&#x2502;   &#x251C;&#x2500;&#x2500; functions.py
+&#x2502;   &#x251C;&#x2500;&#x2500; main.py
+&#x2502;   &#x251C;&#x2500;&#x2500; requirements.txt
+</pre><p><a href="../smith_waterman/config.py">config.py</a> files contains the scoring scheme and can be updated easily<br>
+<a href="../smith_waterman/functions.py">functions.py</a> contains the function required in each step of the algorithm<br>
+<a href="../smith_waterman/main.py">main.py</a><br>
+<a href="../smith_waterman/requirements.txt">requirements.txt</a> shows the dependencies</p>
+<h3 class="mume-header undefined" id="dependencies">Dependencies</h3>
+
+<p>Download dependencies:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash">user@macbook:~$ pip <span class="token function">install</span> numpy tabulate
+</pre><h3 class="mume-header" id="running-the-application-how-to-align-the-sequences">Running the Application: How to align the sequences?</h3>
+
+<p>Let&apos;s consider following sequences for local alignment</p>
+<p><code>Sequence 1 : TGTTACGG</code><br>
+<code>Sequence 1 : GGTTGACTA</code></p>
+<p>Lets&apos;s run the <a href="../smith_waterman/main.py">main.py</a> file with the scoring arguments and sequences.</p>
+<ul>
+<li>Note that changing the scoring scheme might affect the results and the dafult values are [3,-3, 2] for the algorithm.</li>
+</ul>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>user@macbook:~$ python main.py TGTTACGG GGTTGACTA --match 3 --mismatch 
+-3 --penalty -2
+</code></pre><p>which prints the results.</p>
+<pre data-role="codeBlock" data-info="console" class="language-console"><code>  SMITH-WATERMAN ALGORITHM FOR LOCAL ALIGNMENT  
+
+-------------SEQUENCES-------------
+
+ SEQUENCE 1 :  TGTTACGG
+ SEQUENCE 2 :  GGTTGACTA 
+
+-------------ALIGNMENT-------------
+
+ GTT-AC
+ ||||||
+ GTTGAC
+-------------STATISTICS------------- 
+
++------------+---------+------+
+| MISMATCHES | MATCHES | GAPS |
++------------+---------+------+
+|     0      |    5    |  1   |
++------------+---------+------+ 
+</code></pre><h3 class="mume-header undefined" id="functions">Functions</h3>
+
+<h3 class="mume-header undefined" id="functions"><code>1. smith_waterman(sequence_1, sequence_2)</code></h3>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword keyword-def">def</span> <span class="token function">smith_waterman</span><span class="token punctuation">(</span>sequence_1<span class="token punctuation">,</span> sequence_2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;
+    The function `smith_waterman` takes two sequences as input and returns the aligned sequences and
+    alignment statistics using the Smith-Waterman algorithm.
+    
+    :param sequence_1: The first sequence of characters or elements that you want to align
+    :param sequence_2: The first sequence to be aligned
+    :return: three values: base_aligned, match_aligned, and statistics.
+
+    Example:
+    &quot;&quot;&quot;</span>
+    H <span class="token operator">=</span> initialize_matrix<span class="token punctuation">(</span>sequence_1<span class="token punctuation">,</span> sequence_2<span class="token punctuation">)</span>
+    <span class="token comment"># compute the indices of the highest score in the matrix</span>
+    i<span class="token punctuation">,</span> j <span class="token operator">=</span> np<span class="token punctuation">.</span>unravel_index<span class="token punctuation">(</span>np<span class="token punctuation">.</span>argmax<span class="token punctuation">(</span>H<span class="token punctuation">)</span><span class="token punctuation">,</span> H<span class="token punctuation">.</span>shape<span class="token punctuation">)</span>
+    base_aligned<span class="token punctuation">,</span> match_aligned<span class="token punctuation">,</span> statistics <span class="token operator">=</span> traceback<span class="token punctuation">(</span>H<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> sequence_1<span class="token punctuation">,</span> sequence_2<span class="token punctuation">)</span>
+    <span class="token keyword keyword-return">return</span> base_aligned<span class="token punctuation">,</span> match_aligned<span class="token punctuation">,</span> statistics
+</pre><p>Smith-Waterman function uses <code>initialize_matrix</code> and <code>traceback</code>functions</p>
+<h3 class="mume-header" id="2-initialize-matrix"><code>2. initialize matrix</code></h3>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token keyword keyword-def">def</span> <span class="token function">initialize_matrix</span><span class="token punctuation">(</span>base_sequence<span class="token operator">=</span><span class="token string">&quot;AGCTA&quot;</span><span class="token punctuation">,</span> matching_sequence<span class="token operator">=</span><span class="token string">&quot;GCTAA&quot;</span><span class="token punctuation">,</span> match_value<span class="token operator">=</span>scoring<span class="token punctuation">[</span><span class="token string">&quot;match&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> mismatch_value<span class="token operator">=</span>scoring<span class="token punctuation">[</span><span class="token string">&quot;mismatch&quot;</span><span class="token punctuation">]</span><span class="token punctuation">,</span> penalty_value<span class="token operator">=</span>scoring<span class="token punctuation">[</span><span class="token string">&quot;penalty&quot;</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;
+    Example:
+
+    Input: 
+    seq1 = &quot;TGTTACGG&quot; 
+    seq2 = &quot;GGTTGACTA&quot;  
+
+    Output:
+    array([[ 0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.],
+       [ 0.,  0.,  0.,  3.,  3.,  1.,  0.,  0.,  3.,  1.],
+       [ 0.,  3.,  3.,  1.,  1.,  6.,  4.,  2.,  1.,  0.],
+       [ 0.,  1.,  1.,  6.,  4.,  4.,  3.,  1.,  5.,  3.],
+       [ 0.,  0.,  0.,  4.,  9.,  7.,  5.,  3.,  4.,  2.],
+       [ 0.,  0.,  0.,  2.,  7.,  6., 10.,  8.,  6.,  7.],
+       [ 0.,  0.,  0.,  0.,  5.,  4.,  8., 13., 11.,  9.],
+       [ 0.,  3.,  3.,  1.,  3.,  8.,  6., 11., 10.,  8.],
+       [ 0.,  3.,  6.,  4.,  2.,  6.,  5.,  9.,  8.,  7.]])
+
+    &quot;&quot;&quot;</span>
+    m<span class="token punctuation">,</span> n <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>base_sequence<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token builtin">len</span><span class="token punctuation">(</span>matching_sequence<span class="token punctuation">)</span>
+    H <span class="token operator">=</span> np<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token punctuation">(</span>m<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword keyword-for">for</span> i <span class="token keyword keyword-in">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> m<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-for">for</span> j <span class="token keyword keyword-in">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> n<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            base_score <span class="token operator">=</span> H<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
+            <span class="token comment">#print(base_score)</span>
+            left <span class="token operator">=</span> H<span class="token punctuation">[</span>i<span class="token punctuation">,</span> j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> penalty_value
+            up <span class="token operator">=</span> H<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> j<span class="token punctuation">]</span> <span class="token operator">+</span> penalty_value
+            <span class="token keyword keyword-if">if</span> base_sequence<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> matching_sequence<span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                <span class="token comment">#print(seq1[i-1], seq2[j-1])</span>
+                score <span class="token operator">=</span> base_score <span class="token operator">+</span> match_value
+            <span class="token keyword keyword-else">else</span><span class="token punctuation">:</span>
+                score <span class="token operator">=</span> base_score <span class="token operator">+</span> mismatch_value
+
+            H<span class="token punctuation">[</span>i<span class="token punctuation">,</span>j<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token builtin">max</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> score<span class="token punctuation">,</span> left<span class="token punctuation">,</span> up<span class="token punctuation">)</span>
+    <span class="token keyword keyword-return">return</span> H
+</pre><h3 class="mume-header" id="3-traceback"><code>3. traceback</code></h3>
+
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># traceback, recursive function to traceback to find the local alignment </span>
+<span class="token keyword keyword-def">def</span> <span class="token function">traceback</span><span class="token punctuation">(</span>H<span class="token punctuation">,</span> i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> seq1<span class="token punctuation">,</span> seq2<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token triple-quoted-string string">&quot;&quot;&quot;
+    Given the location of the highest score, tracebacks till the beginning of the local alignment
+
+    INPUT:
+
+    H = array([[ 0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.],
+       [ 0.,  0.,  0.,  3.,  3.,  1.,  0.,  0.,  3.,  1.],
+       [ 0.,  3.,  3.,  1.,  1.,  6.,  4.,  2.,  1.,  0.],
+       [ 0.,  1.,  1.,  6.,  4.,  4.,  3.,  1.,  5.,  3.],
+       [ 0.,  0.,  0.,  4.,  9.,  7.,  5.,  3.,  4.,  2.],
+       [ 0.,  0.,  0.,  2.,  7.,  6., 10.,  8.,  6.,  7.],
+       [ 0.,  0.,  0.,  0.,  5.,  4.,  8., 13., 11.,  9.],
+       [ 0.,  3.,  3.,  1.,  3.,  8.,  6., 11., 10.,  8.],
+       [ 0.,  3.,  6.,  4.,  2.,  6.,  5.,  9.,  8.,  7.]])
+
+    i = 6
+    j = 7
+    seq1 = &quot;TGTTACGG&quot; 
+    seq2 = &quot;GGTTGACTA&quot;  
+
+    OUTPUT: 
+
+    (&apos;GTT-AC&apos;,
+    &apos;GTTGAC&apos;,
+    {&apos;best_score&apos;: 13.0, &apos;matches&apos;: 5, &apos;mismatches&apos;: 0, &apos;gaps&apos;: 1})
+
+    &quot;&quot;&quot;</span>
+    alignments <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    alignment_base <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+    alignment_match <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+    max_score <span class="token operator">=</span> H<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+    gaps<span class="token punctuation">,</span> mismatches<span class="token punctuation">,</span> matches <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span>
+    <span class="token keyword keyword-while">while</span> H<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token number">0</span><span class="token punctuation">:</span>
+        <span class="token keyword keyword-if">if</span> seq1<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> seq2<span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            <span class="token comment">#print(&quot;match&quot;, seq1[i-1], &quot;-&quot; ,seq2[j-1])</span>
+            alignment_base <span class="token operator">=</span> seq1<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> alignment_base
+            alignment_match <span class="token operator">=</span> seq1<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> alignment_match
+            i <span class="token operator">-=</span> <span class="token number">1</span>
+            j <span class="token operator">-=</span> <span class="token number">1</span>
+            matches <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token keyword keyword-else">else</span><span class="token punctuation">:</span>
+            <span class="token keyword keyword-if">if</span> H<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> H<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> scoring<span class="token punctuation">[</span><span class="token string">&quot;mismatch&quot;</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                alignment_base <span class="token operator">=</span> seq1<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> alignment_base
+                alignment_match <span class="token operator">=</span> seq2<span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> alignment_match
+                i <span class="token operator">-=</span> <span class="token number">1</span>
+                j <span class="token operator">-=</span> <span class="token number">1</span>
+                mismatches <span class="token operator">+=</span> <span class="token number">1</span>
+            <span class="token keyword keyword-elif">elif</span> H<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> H<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> scoring<span class="token punctuation">[</span><span class="token string">&quot;penalty&quot;</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                <span class="token comment">#print(&quot;go up up up&quot;, )</span>
+                alignment_base <span class="token operator">=</span> <span class="token string">&quot;-&quot;</span> <span class="token operator">+</span> alignment_base
+                alignment_match <span class="token operator">=</span> seq2<span class="token punctuation">[</span>j<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> alignment_match
+                j <span class="token operator">-=</span> <span class="token number">1</span>
+                gaps <span class="token operator">+=</span> <span class="token number">1</span>
+            <span class="token keyword keyword-else">else</span><span class="token punctuation">:</span> <span class="token comment">#mx[i][j] == mx[i-1][j] -2:</span>
+                <span class="token comment">#print(&quot;go left&quot;)</span>
+                alignment_base <span class="token operator">=</span> seq1<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">+</span> alignment_base
+                alignment_match <span class="token operator">=</span> <span class="token string">&quot;-&quot;</span> <span class="token operator">+</span> alignment_match
+                i <span class="token operator">-=</span> <span class="token number">1</span>
+                gaps <span class="token operator">+=</span> <span class="token number">1</span>
+
+    statistics <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;best_score&quot;</span> <span class="token punctuation">:</span> max_score<span class="token punctuation">,</span>
+        <span class="token string">&quot;matches&quot;</span> <span class="token punctuation">:</span> matches<span class="token punctuation">,</span>
+        <span class="token string">&quot;mismatches&quot;</span> <span class="token punctuation">:</span> mismatches<span class="token punctuation">,</span>
+        <span class="token string">&quot;gaps&quot;</span> <span class="token punctuation">:</span> gaps<span class="token punctuation">,</span>
+        <span class="token comment">#&quot;length&quot; : length</span>
+    <span class="token punctuation">}</span> 
+
+    <span class="token keyword keyword-return">return</span> alignment_base<span class="token punctuation">,</span> alignment_match<span class="token punctuation">,</span> statistics
+</pre><h3 class="mume-header" id="references">References</h3>
+
+<ul>
+<li>Image/Gif: <a href="https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm">https://en.wikipedia.org/wiki/Smith&#x2013;Waterman_algorithm</a></li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

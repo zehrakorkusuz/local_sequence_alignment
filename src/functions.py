@@ -1,113 +1,7 @@
-# ALGORITHMS FOR BIOINFORMATICS | Blanzieri 
+import numpy as np
+import pandas as pd
+from src.config import *
 
-###### Zehra Korkusuz | 2022/2023 
-
-### `Python 3.9` Implementation of Smith-Waterman Algorithm  
-
-Smith-Waterman algorithm is a local alignment algorithm which aims at finding the most similar subsequences between different sequences unlike Needleman-Wush which focuses on finding the optimal global alignment which covers the entire sequence. 
-
-[Background](#background)
-[Dependencies](#dependencies)
-[How to run the algorithm?](#runalgo)
-
-```console
-user@macbook:~$ python main.py TGTTACGG GGTTGACTA --match 3 --mismatch 
--3 --penalty -2
-
-user@macbook:~$ python main.py TGTATTAGCCGG GGTCTGTACTA --match 3 --mismatch 
--3 --penalty -2
-```
-
-[Functions used in the algorithm](#functions)
-
-![Smith-Waterman Scoring Gif](/smith_waterman/assets/waterman.gif)
-
-###Steps of Smith-Waterman Algorithm {#background}
-
-1. Initilize an empty scoring matrix H with m+1 and n+1 size where m, n are the lengths of the sequences
-2. Compute the scores in the matrix with a scoring scheme where default values are
-    
-    `matching_value = 3`
-    `mismatch_value = -3`
-   `penalty value = -2`
-
-3. Backtrace recursively from the highest value to smallest value through the path which is greater than 0 to find the optimal local alignment
-
-
-### APPLICATION {#runalgo}
-
-Go to **smith_waterman** directory
-
-```bash
-user@macbook:~$ cd smith_waterman
-```
-which looks like
-
-```bash
-├── smith_waterman/
-│   ├── config.py
-│   ├── functions.py
-│   ├── main.py
-│   ├── requirements.txt
-```
-
-[config.py](../smith_waterman/config.py) files contains the scoring scheme and can be updated easily
-[functions.py](../smith_waterman/functions.py) contains the function required in each step of the algorithm
-[main.py](../smith_waterman/main.py)
-[requirements.txt](../smith_waterman/requirements.txt) shows the dependencies
-
-### Dependencies {#dependencies}
-
-Download dependencies: 
-
-```bash
-user@macbook:~$ pip install numpy tabulate
-```
-
-### Running the Application: How to align the sequences? 
-
-Let's consider following sequences for local alignment
-
-`Sequence 1 : TGTTACGG`
-`Sequence 1 : GGTTGACTA`
-
-Lets's run the [main.py](../smith_waterman/main.py) file with the scoring arguments and sequences.
-
-- Note that changing the scoring scheme might affect the results and the dafult values are [3,-3, 2] for the algorithm.
-
-```console
-user@macbook:~$ python main.py TGTTACGG GGTTGACTA --match 3 --mismatch 
--3 --penalty -2
-```
-which prints the results. 
-
-
-```console
-  SMITH-WATERMAN ALGORITHM FOR LOCAL ALIGNMENT  
-
--------------SEQUENCES-------------
-
- SEQUENCE 1 :  TGTTACGG
- SEQUENCE 2 :  GGTTGACTA 
-
--------------ALIGNMENT-------------
-
- GTT-AC
- ||||||
- GTTGAC
--------------STATISTICS------------- 
-
-+------------+---------+------+
-| MISMATCHES | MATCHES | GAPS |
-+------------+---------+------+
-|     0      |    5    |  1   |
-+------------+---------+------+ 
-```
-
-### Functions {#functions}
-
-### `1. smith_waterman(sequence_1, sequence_2)` {#functions}
-```python
 def smith_waterman(sequence_1, sequence_2):
     """
     The function `smith_waterman` takes two sequences as input and returns the aligned sequences and
@@ -117,20 +11,34 @@ def smith_waterman(sequence_1, sequence_2):
     :param sequence_2: The first sequence to be aligned
     :return: three values: base_aligned, match_aligned, and statistics.
 
-    Example:
+    INPUT:
+
+    seq1 = "TGTTACGG" 
+    seq2 = "GGTTGACTA"  
+
+    OUTPUT:
+
+    ('GTT-AC',
+    'GTTGAC',
+    {'best_score': 13.0, 'matches': 5, 'mismatches': 0, 'gaps': 1})
+
     """
     H = initialize_matrix(sequence_1, sequence_2)
-    # compute the indices of the highest score in the matrix
-    i, j = np.unravel_index(np.argmax(H), H.shape)
-    base_aligned, match_aligned, statistics = traceback(H, i, j, sequence_1, sequence_2)
-    return base_aligned, match_aligned, statistics
-```
+    alignments = []
 
-Smith-Waterman function uses `initialize_matrix` and `traceback `functions
+    # find indices to traceback 
+    indices = find_indices(H, threshold=filter["min_score"]) # which has threshold value extracted from config, if you want you can set by threshold=10 etc. 
 
-### `2. initialize matrix`
+    # traceback and add to alignment if meet the requirement given under the config by user
+    for i in indices:
+        i, j = i[0], i[1]
+        result = traceback(H, i, j, sequence_1, sequence_2)
+        condition = filter_alignments(result["stats"])
+        if condition:
+            alignments.append(result)
 
-```python
+    return alignments
+
 def initialize_matrix(base_sequence="AGCTA", matching_sequence="GCTAA", match_value=scoring["match"], mismatch_value=scoring["mismatch"], penalty_value=scoring["penalty"]):
     """
     Example:
@@ -167,11 +75,6 @@ def initialize_matrix(base_sequence="AGCTA", matching_sequence="GCTAA", match_va
 
             H[i,j] = max(0, score, left, up)
     return H
-```
-
-### `3. traceback`
-
-```python
 
 # traceback, recursive function to traceback to find the local alignment 
 def traceback(H, i, j, seq1, seq2):
@@ -202,7 +105,6 @@ def traceback(H, i, j, seq1, seq2):
     {'best_score': 13.0, 'matches': 5, 'mismatches': 0, 'gaps': 1})
 
     """
-    alignments = []
     alignment_base = ""
     alignment_match = ""
     max_score = H[i][j]
@@ -236,16 +138,50 @@ def traceback(H, i, j, seq1, seq2):
                 gaps += 1
 
     statistics = {
-        "best_score" : max_score,
+        "score" : max_score,
         "matches" : matches,
         "mismatches" : mismatches,
         "gaps" : gaps,
-        #"length" : length
     } 
 
-    return alignment_base, alignment_match, statistics
-```
+    return {"seq1": alignment_base, "seq2":alignment_match, "stats": statistics} # indices to be iterable
 
-### References 
+def find_indices(matrix, threshold=filter["min_score"]):
 
-- Image/Gif: https://en.wikipedia.org/wiki/Smith%E2%80%93Waterman_algorithm
+    high_scoring_indices = np.argwhere(matrix >= threshold)
+    high_scoring_values = matrix[high_scoring_indices[:, 0], high_scoring_indices[:, 1]]
+
+    #sort by value of the indices in the matrix
+    sorted_indices = high_scoring_indices[np.argsort(-high_scoring_values)]
+    sorted_values = high_scoring_values[np.argsort(-high_scoring_values)]
+
+    #filter values by threshold
+    above_threshold_mask = sorted_values >= threshold
+    sorted_indices = sorted_indices[above_threshold_mask]
+
+    return sorted_indices
+
+def filter_alignments(stats, min_score= filter["min_consecutive_match"], min_consecutive_match=filter["min_consecutive_match"]):
+    if min_score is not None:
+        if stats["score"] < min_score:
+            return False
+    if min_consecutive_match is not None:
+        if stats["max_consecutive_match"] < min_consecutive_match :
+            return False
+    return True
+
+def alignment_to_df(alignments):
+        df = pd.DataFrame(alignments)
+        df_stats = pd.json_normalize(df["stats"])
+        df_stats = df_stats.rename(columns={
+            "best_score" : "Score",
+            "matches" : "Matches",
+            "mismatches" : "Mismatches",
+            "gaps" : "Gaps" 
+        })
+
+        df = pd.concat([df[['seq1', 'seq2']], df_stats], axis=1)
+         # Set index starting from 0, to later access easier
+        df.index = range(len(df))
+
+        return df
