@@ -1,4 +1,4 @@
-# ALGORITHMS FOR BIOINFORMATICS | Blanzieri 
+# ALGORITHMS FOR BIOINFORMATICS Exam | Blanzieri 
 
 ###### Zehra Korkusuz | 2022/2023 
 
