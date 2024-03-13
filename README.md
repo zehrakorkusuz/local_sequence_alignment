@@ -7,7 +7,9 @@
 Smith-Waterman algorithm is a local alignment algorithm which aims at finding the most similar subsequences between different sequences unlike Needleman-Wush which focuses on finding the optimal global alignment which covers the entire sequence. 
 
 [Background](#background)
+
 [Dependencies](#dependencies)
+
 [How to run the algorithm?](#runalgo)
 
 ```console
@@ -20,7 +22,7 @@ user@macbook:~$ python main.py TGTATTAGCCGG GGTCTGTACTA --match 3 --mismatch
 
 [Functions used in the algorithm](#functions)
 
-![Smith-Waterman Scoring Gif](/smith_waterman/assets/waterman.gif)
+![Smith-Waterman Scoring Gif](https://github.com/zehrakorkusuz/local_sequence_alignment/blob/main/assets/waterman.gif)
 
 ###Steps of Smith-Waterman Algorithm {#background}
 
@@ -52,8 +54,11 @@ which looks like
 ```
 
 [config.py](../smith_waterman/config.py) files contains the scoring scheme and can be updated easily
+
 [functions.py](../smith_waterman/functions.py) contains the function required in each step of the algorithm
+
 [main.py](../smith_waterman/main.py)
+
 [requirements.txt](../smith_waterman/requirements.txt) shows the dependencies
 
 ### Dependencies {#dependencies}
